@@ -28,6 +28,9 @@ plus.addEventListener("click", () => {
   }
 });
 
+// Add placeholder text
+input.placeholder = "ِAdd Your Task";
+
 function pushToArray(text) {
   const data = {
     id: Date.now(),
