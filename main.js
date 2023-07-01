@@ -15,13 +15,11 @@ array = [];
 // plus onclick
 plus.addEventListener("click", () => {
   if (input.value !== "") {
+  input.focus();
     pushToArray(input.value);
     input.value = "";
-    console.log(array);
     // remove no task message
     noTaskMas.remove();
-  } else {
-    console.log("No message");
   }
 });
 
@@ -34,13 +32,18 @@ function pushToArray(text) {
   array.push(data);
   addElement(array);
   // toLocal();
+  function addElement(task) {
+    div.innerHTML = ""
+    array.forEach((data) => {
+        let tasksDiv = document.createElement("span");
+        tasksDiv.textContent = data.title;
+        tasksDiv.className = "task"
+        tasksDiv.setAttribute("data-id", data.id)
+        div.appendChild(tasksDiv)
+      });
+  }
 }
 
-function addElement(task) {
-  //   task.forEach(element => {
-  //     let tasksDiv = document.createElement("");
-  //   });
-}
 
 // this function is emty *************
 // function toLocal() {}
