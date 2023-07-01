@@ -18,6 +18,10 @@ plus.addEventListener("click", () => {
     pushToArray(input.value);
     input.value = "";
     console.log(array);
+    // remove no task message
+    noTaskMas.remove();
+  } else {
+    console.log("No message");
   }
 });
 
@@ -33,22 +37,10 @@ function pushToArray(text) {
 }
 
 function addElement(task) {
-
-
-//   task.forEach(element => {
-//     let tasksDiv = document.createElement("");
-//   });
+  //   task.forEach(element => {
+  //     let tasksDiv = document.createElement("");
+  //   });
 }
 
-// remove no task message
-
-plus.onclick = function(){
-  if (input.value !== '') {
-    noTaskMas.remove()
-  }else{
-    console.log("No message");
-    
-  }
-}
 // this function is emty *************
 // function toLocal() {}
