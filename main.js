@@ -29,7 +29,7 @@ plus.addEventListener("click", () => {
 });
 
 // Add placeholder text
-input.placeholder = "ِAdd Your Task";
+input.placeholder = "أضف مهمة";
 
 function pushToArray(text) {
   const data = {
