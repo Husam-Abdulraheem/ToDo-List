@@ -42,7 +42,28 @@ function pushToArray(text) {
 function addElement(task) {
   task.forEach(element => {
     let tasksDiv = document.createElement("div");
-    tasksDiv.textContent = element.title;
+    tasksDiv.className = "task";
+    
+    let taskTitle = document.createElement("span");
+    taskTitle.textContent = element.title;
+    tasksDiv.appendChild(taskTitle);
+    
+    let deleteButton = document.createElement("button");
+    deleteButton.className = "delete-btn";
+    deleteButton.textContent = "حذف";
+    deleteButton.addEventListener("click", () => {
+      deleteTask(element.id);
+    });
+    tasksDiv.appendChild(deleteButton);
+    
+    let completeButton = document.createElement("button");
+    completeButton.className = "complete-btn";
+    completeButton.textContent = "تمت";
+    completeButton.addEventListener("click", () => {
+      markTaskAsComplete(element.id);
+    });
+    tasksDiv.appendChild(completeButton);
+    
     div.appendChild(tasksDiv);
   });
 
@@ -51,6 +72,25 @@ function addElement(task) {
   // تحديث إحصائيات المهام
   count.textContent = array.length;
   updateCompletedCount();
+}
+
+function deleteTask(taskId) {
+  array = array.filter(task => task.id !== taskId);
+  div.innerHTML = "";
+  addElement(array);
+  saveToLocal();
+}
+
+function markTaskAsComplete(taskId) {
+  array = array.map(task => {
+    if (task.id === taskId) {
+      task.complete = true;
+    }
+    return task;
+  });
+  div.innerHTML = "";
+  addElement(array);
+  saveToLocal();
 }
 
 function updateCompletedCount() {
