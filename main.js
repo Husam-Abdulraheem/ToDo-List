@@ -25,7 +25,15 @@ plus.addEventListener("click", () => {
     // create span element
     let mainSpan = document.createElement("span");
     // create delete bottun
-    let deleteElement = document.createElement("span")
+    let deleteElement = document.createElement("span");
+    deleteElement.className = "delete";
+
+    // let deleteButton = document.createElement("button");
+    // deleteButton.className = "delete-btn";
+    // deleteButton.textContent = "حذف";
+    // deleteButton.addEventListener("click", () => {
+    //   deleteTask(element.id);
+    // });
     
   }else{
     console.log("what")
