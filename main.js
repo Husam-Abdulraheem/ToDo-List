@@ -20,6 +20,13 @@ plus.addEventListener("click", () => {
     input.value = "";
     // remove no task message
     noTaskMas.remove();
+    // create span element
+    let mainSpan = document.createElement("span");
+    // create delete bottun
+    let deleteElement = document.createElement("span")
+    
+  }else{
+    console.log("what")
   }
 });
 
@@ -39,11 +46,12 @@ function pushToArray(text) {
         tasksDiv.textContent = data.title;
         tasksDiv.className = "task"
         tasksDiv.setAttribute("data-id", data.id)
+        
         div.appendChild(tasksDiv)
       });
   }
 }
 
 
-// this function is emty *************
+// this function is empty *************
 // function toLocal() {}
