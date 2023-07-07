@@ -10,6 +10,8 @@ let completed = document.querySelector(".tasks-completed span");
 window.onload = function () {
   input.focus();
 };
+// Add placeholder text
+input.placeholder = "Add Your Task";
 
 array = [];
 // plus onclick
