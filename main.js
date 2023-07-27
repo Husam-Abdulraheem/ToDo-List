@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 // Setting Up  Var
 let input = document.querySelector(".add-task input");
 let plus = document.querySelector(".add-task .plus");
