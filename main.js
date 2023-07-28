@@ -23,7 +23,7 @@ getFromLocal();
 // plus onclick
 plus.addEventListener("click", () => {
   if (input.value === "") {
-    console.log("noTaskMas");
+    swal("Ops!", "I can't see any writing!", "warning");
   } else {
     // remove no task message
     noTaskMas.remove();
@@ -89,6 +89,7 @@ function getFromLocal() {
   if (data) {
     let tasks = JSON.parse(data);
     addElement(tasks);
+    calculateTask();
   }
 }
 function calculateTask() {
@@ -104,4 +105,12 @@ function calculateTask() {
 function deletFLocal(taskId) {
   array = array.filter((task) => task.id != taskId);
   addLocal(array);
+}
+// Function to create no tasks message
+function createNoTasks() {
+  let msgSpan = document.createElement("span");
+  let msgtext = document.createTextNode("No tasks To Show");
+  msgSpan.appendChild(msgtext);
+  msgSpan.className = "no-tasks-message";
+  div.appendChild(msgSpan);
 }
